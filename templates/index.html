@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokeberries statistics API</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center my-4">
+        <div class="col-md-3">
+            <h1>Pokeberries Statistics API</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Berry Name</td>
+                        <td><a href="{{ url_for('berries') }}">Berries</a></td>
+                    </tr>
+                    <tr>
+                        <td>Min Growth Time</td>
+                        <td>{{ berry_stats['min_growth_time_' ~ berry_stats['berries_names']|length|string] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Median Growth Time</td>
+                        <td>{{ berry_stats['median_growth_time_' ~ berry_stats['berries_names']|length|string] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Max Growth Time</td>
+                        <td>{{ berry_stats['max_growth_time_' ~ berry_stats['berries_names']|length|string] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Variance Growth Time</td>
+                        <td>{{ berry_stats['variance_growth_time_' ~ berry_stats['berries_names']|length|string] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Mean Growth Time</td>
+                        <td>{{ berry_stats['mean_growth_time_' ~ berry_stats['berries_names']|length|string] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Frequency Growth Time</td>
+                        <td>{{ berry_stats['frequency_growth_time_' ~ berry_stats['berries_names']|length|string] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
